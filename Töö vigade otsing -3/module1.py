@@ -30,18 +30,38 @@ def arvud_loendis():
     s.sort()
     print(s)
 
-def vahetus(a,b):
+def vahetus(a:int,b:int):
+    """
+    Меняет местами mini и maxi если mini больше maxi
+    :param a :вводимое пользавателем неправельное минимальное число диапазона
+    :param b :вводимое пользавателем неправельное максимальное число диапазона
+    """
     abi=a
     a=b
     b=abi
     return a,b
 
-def generaator(n,loend,a,b):
+def generaator(n:int,loend:list,a:int,b:int):
+    """
+    Выдает n случайных чисел от а до b 
+    :param int n : сколко раз нужно повторить цкал
+    :param int a : какое минимальное число диапазона будет выведен
+    :param int b : какое максимальное число диапазона будет выведен
+    :param list loend : хранит даные выведенных чисел
+    """
     for i in range (n):
         loend.append(randint(a,b))
     
 
-def jagamine(loend,p,n,nol):
+def jagamine(loend:list,p:int,n:int,nol:int):
+    """
+    Проверяет и запоменает в списки pos, neg, null 
+    из списка loend сколько позитивных,негативных и нулей 
+    :param int p :
+    :param int n :
+    :param int nol :
+    :list loend : хранит даные проверенных чисел
+    """
     for el in loend:
         if el>0:
             p.append(el)
@@ -51,6 +71,8 @@ def jagamine(loend,p,n,nol):
             nol.append(el)
 
 def keskmine(loend):
+    """
+    """
     n=len(loend)
     if n==0:
         kesk=0
